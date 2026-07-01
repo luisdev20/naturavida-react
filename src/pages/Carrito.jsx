@@ -40,13 +40,13 @@ export default function Carrito() {
         <h1 className="font-playfair text-[2rem] font-bold text-natura-dark mb-8">Tu Carrito</h1>
 
         {items.length === 0 ? (
-          <div className="text-center py-20">
-            <div className="text-6xl mb-4"></div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">Tu carrito está vacío</h3>
-            <p className="text-gray-400 mb-8">Agrega algunos de nuestros productos naturales</p>
-            <Link to="/catalogo" className="btn-primary">Ver productos</Link>
-          </div>
-        ) : (
+  <div className="text-center py-20">
+    <div className="text-6xl mb-4">🛒</div>
+    <h3 className="text-xl font-semibold text-gray-600 mb-2">Tu carrito está vacío</h3>
+    <p className="text-gray-400 mb-8">¡Explora nuestros productos naturales y encuentra lo que necesitas!</p>
+    <Link to="/catalogo" className="btn-primary">Ver productos</Link>
+  </div>
+) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             <div className="lg:col-span-2 space-y-4">

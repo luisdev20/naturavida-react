@@ -1,18 +1,20 @@
 import { useEffect } from 'react';
 
-export default function Toast({ mensaje, visible, tipo = 'success' }) {
-  if (!visible) return null;
+export default function Toast({ message, type = 'success', onClose }) {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  const styles = {
+    success: 'bg-primary text-white',
+    error: 'bg-red-500 text-white',
+    info: 'bg-blue-500 text-white',
+  };
+
   return (
-    <div className={`toast-msg ${tipo === 'error' ? 'toast-error' : ''}`}>
-      {mensaje}
+    <div className={`fixed top-20 right-4 z-50 px-5 py-3 rounded-xl shadow-lg font-medium text-sm animate-fade-in ${styles[type]}`}>
+      {message}
     </div>
   );
-}
-
-export function useToast() {
-  const [toast, setToast] = [
-    { visible: false, mensaje: '', tipo: 'success' },
-    null,
-  ];
-  return { toast, setToast };
 }

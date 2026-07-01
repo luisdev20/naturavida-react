@@ -124,6 +124,28 @@ export default function Catalogo() {
               ))}
             </ul>
 
+            {/* Filtro de precio */}
+<div className="mb-6">
+  <h3 className="text-[0.78rem] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+    Precio máximo
+  </h3>
+  <div className="px-2">
+    <input
+      type="range"
+      min="0"
+      max="60"
+      step="5"
+      value={precioMaximo}
+      onChange={(e) => setPrecioMaximo(Number(e.target.value))}
+      className="w-full accent-primary"
+    />
+    <div className="flex justify-between text-sm text-gray-500 mt-1">
+      <span>S/ 0</span>
+      <span>S/ {precioMaximo}</span>
+    </div>
+  </div>
+</div>
+
             <h3 className="text-[0.78rem] font-semibold text-gray-500 uppercase tracking-wider mb-3">Precio máximo</h3>
             <div className="mb-6">
               <input
