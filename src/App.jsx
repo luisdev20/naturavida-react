@@ -1,3 +1,4 @@
+import MisPedidos from './pages/MisPedidos';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CarritoProvider } from './context/CarritoContext';
@@ -35,6 +36,7 @@ function AppContent() {
         <Navbar />
         <div className="flex-1">
           <Routes>
+            <Route path="/mis-pedidos" element={<MisPedidos />} />
             <Route path="/" element={<Home />} />
             <Route path="/catalogo" element={<Catalogo />} />
             <Route path="/ofertas" element={<Ofertas />} />
